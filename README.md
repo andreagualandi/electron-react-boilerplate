@@ -6,7 +6,7 @@ Minimal configuration for ElectronJs and ReactJs
 Clone the repo via git:
 
 ```bash
-git clone https://github.com/andreagualandi/electron-react-boilerplate.git my-project
+git clone --depth 1 --single-branch --branch master https://github.com/andreagualandi/electron-react-boilerplate.git my-project
 ```
 
 Install the dependencies:

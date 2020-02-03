@@ -2,7 +2,12 @@
 
 Minimal configuration for ElectronJs and ReactJs
 
-## Install
+## Getting started
+
+Click the "Use this template" button.
+
+or
+
 Clone the repo via git:
 
 ```bash

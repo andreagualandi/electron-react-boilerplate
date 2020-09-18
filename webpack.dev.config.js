@@ -41,7 +41,7 @@ module.exports = {
             }
         ]
     },
-    target: 'electron-renderer',
+    target: 'web',
     plugins: [
         new HtmlWebpackPlugin({
             template: SRC_DIR + '/frontend/index.html',
@@ -68,8 +68,8 @@ module.exports = {
                 ['.'],
                 { shell: true, env: process.env, stdio: 'inherit' }
             )
-            .on('close', code => process.exit(0))
-            .on('error', spawnError => console.error(spawnError));
+                .on('close', code => process.exit(0))
+                .on('error', spawnError => console.error(spawnError));
         }
     }
 };

@@ -5,7 +5,7 @@ const url = require('url');
 require('./src/backend/index');
 // Keep a reference for dev mode
 let dev = false;
-console.log('default',process.defaultApp);
+console.log('default', process.defaultApp);
 if (process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) || /[\\/]electron[\\/]/.test(process.execPath)) {
     dev = true;
 }
@@ -21,7 +21,7 @@ function createWindow() {
         minHeight: 600,
         show: false,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
         }
     })
     mainWindow.setMenu(null);

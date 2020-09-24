@@ -2,8 +2,6 @@
 
 const ipc = require('electron').ipcMain
 
-ipc.on('data', handleMsg);
-
-function handleMsg(event, arg) {
-    event.sender.send('data', { msg: 'Response from backend' });
-}
+ipc.handle('api', async (event, args) => {
+    return 'backend message';
+});

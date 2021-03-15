@@ -2,7 +2,7 @@ import React from 'react'
 import './about.less';
 
 export default function About() {
-    window.ipcRenderer.invoke('api', {}).then((result) => {
+    window.electron.ipcRenderer.invoke('api', {}).then((result) => {
         console.log('Message from back', result);
     })
 

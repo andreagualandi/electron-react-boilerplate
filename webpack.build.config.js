@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MinifyPlugin = require("babel-minify-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 
 // Config directories
@@ -50,9 +50,16 @@ module.exports = {
         new MiniCssExtractPlugin({ filename: 'bundle.css' }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
-        }),
-        new MinifyPlugin()
+        })
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                test: /\.js(\?.*)?$/i,
+            }),
+        ],
+    },
     stats: {
         colors: true,
         children: false,
